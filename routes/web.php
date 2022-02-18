@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,9 @@ use App\Http\Controllers\PageController;
 //     return view('welcome');
 // });
 Route:: get('/', [PageController::class, 'index']);
+Route:: get('/siswa', [PageController::class, 'siswa']);
+Route:: get('/guru', [PageController::class, 'guru']);
+Route:: get('/mapel', [PageController::class, 'mapel']);
+Route:: get('/jadwal_mapel', [PageController::class, 'jadwal_mapel']);
+//admin
+Route::POST('/add_guru', [AdminController::class, 'add_guru'])->name('add_guru');
